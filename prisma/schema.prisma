@@ -35,6 +35,7 @@ model Post {
   published Boolean
   title     String
   content   String?
-  author    User      @relation(references: [id])
+  author    User      @relation(fields: [authorId], references: [id])
+  authorId  Int
   kind      PostKind?
 }
